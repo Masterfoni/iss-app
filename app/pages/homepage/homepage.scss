@@ -1,0 +1,47 @@
+button.butao
+{
+	width: 98%;
+	max-width: 98%;
+	min-width: 0%;
+	height: 40px;
+	background-color:gray;
+}
+
+.iconecent
+{
+	text-align: center;
+	.input-wrapper
+	{
+		overflow:initial;
+	}
+}
+	
+.botonNota
+{
+	background-color: #007CA6;
+	float:right;
+	width: 50px;
+	border:0px;
+}
+
+div
+{
+	.nomeMunicipius
+	{
+		float:left;
+		font-family: Tahoma, Verdana, Segoe, sans-serif;
+		color: white;
+		padding-top: 8px;
+		padding-left: 5px;
+	}
+}
+
+button
+{
+	img
+	{
+		margin-right:auto;
+		margin-left:auto;
+		height:60px;
+	}
+}

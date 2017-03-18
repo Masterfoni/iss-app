@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+<importacao>
+	<nota>
+		<rps_numero>Número do RPS</rps_numero> 
+		<rps_data>Data do RPS (aaaa-mm-dd)</rps_data> 
+		<tomador_nome>Nome do tomador</tomador_nome> 
+		<tomador_cnpjcpf>CNPJ/CPF do tomador (000.000.000-00 ou 00.000.000/0000-00)</tomador_cnpjcpf> 
+		<tomador_inscrmunicipal>Inscrição municipal</tomador_inscrmunicipal> 
+		<tomador_logradouro>Rua do tomador</tomador_logradouro> 
+		<tomador_numero>Número do endereço do tomador</tomador_numero> 
+		<tomador_complemento>Complemento (opcional)</tomador_complemento> 
+		<tomador_bairro>Bairro do tomador</tomador_bairro> 
+		<tomador_cep>CEP do tomador (00000-000)</tomador_cep> 
+		<tomador_municipio>MUNICIPIO</tomador_municipio>
+		<tomador_uf>UF</tomador_uf>
+		<tomador_email>Email do tomador (tomador@mail.com)</tomador_email>
+		<discriminacao>Discriminação da nota</discriminacao>
+		<observacao>Observação da nota</observacao>
+		<aliqinss>Aliquota de INSS da nota (aliquota ex: 1.00)</aliqinss>
+		<reteminss>S ou N(Retem ou não o INSS)</reteminss>
+		<aliqirrf>Aliquota de IRRF da nota (aliquota ex: 1.00)</aliqirrf>
+		<retemirrf>S ou N(Retem ou não o IRRF)</retemirrf>
+		<deducaoirrf>Deduções de IRRF (ex: 1321.00)</deducaoirrf>
+		<aliqpis>Aliquota de PIS da nota (aliquota ex: 1.00)</aliqpis>
+		<retempis>S ou N(Retem ou não o PIS)</retempis>
+		<aliqcofins>Aliquota de COFINS da nota (aliquota ex: 1.00)</aliqcofins>
+		<retemcofins>S ou N(Retem ou não o COFINS)</retemcofins>
+		<aliqcsll>Aliquota de CSLL da nota (aliquota ex: 1.00)</aliqcsll>
+		<retemcsll>S ou N(Retem ou não o CSLL)</retemcsll>
+		<valordeducoes>Deduções da nota (ex: 1321.00)</valordeducoes>
+		<estado>Estado da nota (ex: Normal ou N)</estado>
+		<codservico>
+			<codservico>CODIGO do serviço (ex: 1.01)</codservico>
+			<basecalculo>Base de cálculo (ex: 1321.00)</basecalculo>
+			<issretido>ISS retido do serviço (ex: 1321.00)</issretido>
+		</codservico>
+	</nota>
+</importacao> 

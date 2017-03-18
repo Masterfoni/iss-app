@@ -1,0 +1,30 @@
+<ion-header>
+  
+  <ion-navbar>
+    <ion-title>Notas Emitidas</ion-title>
+  </ion-navbar>
+
+</ion-header>
+
+
+<ion-content class="conteudoEmitidas">
+
+	<ion-list>
+		<ion-item *ngFor="let nota of asNotas">
+			<ion-icon name="ios-list-box" item-left></ion-icon>
+			<h2>{{nota.tomador_nome}}</h2>
+			<h3><b>Num. da Nota:</b> {{nota.numero}}</h3>
+			<h3><b>CPF/CNPJ:</b> {{nota.tomador_cnpjcpf}}</h3>
+			<h3><b>Data de Emissão:</b> {{nota.datahoraemissao}}</h3>
+			<h3><b>Valor:</b> R$ {{nota.valortotal}}</h3>
+		</ion-item>
+	</ion-list>
+
+	<div id="demoListaNotas" style="display:none"></div>
+</ion-content>
+
+<ion-footer align-title="right" class="bar-assertive">
+	<div>
+		<h3 class="nomeMunicipius">{{municipio}}</h3><span class="title"><img src="img/issLogoMini.png"/></span>
+	</div>
+</ion-footer>

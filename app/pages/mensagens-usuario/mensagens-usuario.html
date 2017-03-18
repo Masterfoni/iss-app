@@ -1,0 +1,27 @@
+<ion-header>
+  
+  <ion-navbar>
+    <ion-title>Mensagens</ion-title>
+  </ion-navbar>
+
+</ion-header>
+
+
+<ion-content class="conteudoEmitidas">
+
+	<ion-list>
+		<button ion-item *ngFor="let mensagem of mensagens" (click)="goToMensagens($event.currentTarget)">
+			<ion-icon name="ios-chatboxes-outline" item-left></ion-icon>
+			<h2>{{mensagem.titulo}}</h2>
+			<h3>{{mensagem.mensagem}}</h3>
+		</button>
+	</ion-list>
+
+	<div id="demoListaNotas" style="display:none"></div>
+</ion-content>
+
+<ion-footer align-title="right" class="bar-assertive">
+	<div>
+		<h3 class="nomeMunicipius">{{municipio}}</h3><span class="title"><img src="img/issLogoMini.png"/></span>
+	</div>
+</ion-footer>

@@ -1,0 +1,22 @@
+<ion-content padding class="getting-started">
+<p>
+	<img class="camposCent" src="img/issLOGO.png">
+</p>
+
+<p>
+	<ion-select id="idSelectTelaInicial" class="selectCustom" placeholder="MUNICIPIO" (ionChange)="persisteSelectTelaInicial($event)">
+		<ion-option *ngFor="let key of novoArray">{{key.nome}}</ion-option>
+	</ion-select><br>
+
+	<input class="camposCent" id="loginapp" placeholder="CPF/CNPJ" type="text" (blur)="foqueiOut()" (focus)="foqueiIn()"/><br>
+	<input class="camposCent" id="senhaapp" placeholder="SENHA" type="password"/> 
+</p>
+	<div id="loadingImg" style="display: none">LOUQUISSIMO</div>
+
+<p>
+    <button class="camposCent" (click)="logar()">Entrar</button>
+<!--     <button class="camposCent" (click)="testar()">TESTE</button> -->
+</p>
+	<div id="demo" style="display:none"></div>
+
+</ion-content>

@@ -1,0 +1,67 @@
+<ion-header>
+  <ion-navbar hideBackButton=true>
+    <h6 id="idMsgPraVc" style="float:left; color:white; font-family: Tahoma, Verdana, Segoe, sans-serif; padding-left: 17%; display:none;">Mensagem para você</h6><button class="botonNota" (click)="goToMensagensUsuario()"><ion-icon name="ios-chatboxes" class="jackson" id="idJackson" item-right></ion-icon></button>
+  </ion-navbar>
+
+</ion-header>
+
+
+<ion-content>
+	<ion-grid>
+  		<ion-row>
+    		<ion-col width-33>
+    			<button ion-item class="iconecent" (click)="goToConsultarNotaData()">
+					<img src="img/iconeEmitidas2.png"><br>
+					<h6>NOTAS<br> EMITIDAS</h6>
+				</button>
+    		</ion-col>
+    		<ion-col width-33>
+    			<button ion-item class="iconecent" (click)="goToNovaNota()">
+					<img src="img/iconeCriar2.png"><br>
+					<h6>CRIAR<br> NOTA</h6>
+				</button>
+    		</ion-col>
+    		<ion-col width-33>
+    			<button ion-item class="iconecent" (click)="goToEnviarNota()">
+					<img src="img/iconeEnviar2.png"><br>
+					<h6>ENVIAR<br> NOTA</h6>
+				</button>
+    		</ion-col>
+  		</ion-row>
+  		
+  		<ion-row>
+    		<ion-col width-33>
+    			<button ion-item class="iconecent" (click)="goToCancelarNota()">
+					<img src="img/iconeCancelar2.png"><br>
+					<h6>CANCELAR<br> NOTA</h6>
+				</button>
+    		</ion-col>
+    		
+    		<ion-col width-33>
+    			<button ion-item class="iconecent" (click)="goToConsultarNota()">
+					<img src="img/iconeConsultar2.png"><br>
+					<h6>CONSULTAR<br> NOTA</h6>
+				</button>
+    		</ion-col>
+    		
+    		<ion-col width-33>
+    			<button ion-item class="iconecent" (click)="goToLoginScreen()">
+					<img src="img/iconeSair2.png"><br>
+					<h6>SAIR<br> APP</h6>
+				</button>
+    		</ion-col>
+  		</ion-row>
+	</ion-grid>
+	
+	<ion-item id="valorTotalNotas"><h5>VALOR TOTAL DAS NOTAS NO MÊS: R$ {{veilor}}</h5></ion-item>
+	<ion-item id="valorISS"><h5>VALOR ISS À PAGAR: R$ {{issVeilor}}</h5></ion-item>
+	<div id="demoHomepage" style="display:none"></div>
+</ion-content>
+
+<ion-footer align-title="right" class="bar-assertive">
+	<div>
+		<h3 class="nomeMunicipius">{{municipio}}</h3><span class="title"><img src="img/issLogoMini.png"/></span>
+	</div>
+</ion-footer>
+
+

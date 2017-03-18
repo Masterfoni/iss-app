@@ -1,0 +1,28 @@
+<ion-header>
+
+  <ion-navbar>
+    <ion-title>Enviar Nota</ion-title>
+  </ion-navbar>
+
+</ion-header>
+	
+<ion-content padding>
+	<form id="envioDeNota">
+		<label for="numNotaEnvio">Num Nota:</label><br>
+		<input id="numNotaEnvio" type="number"/><br>
+
+		<label for="emailEnvio">E-mail:</label><br>
+		<input id="emailEnvio" type="email"/><br>
+	</form>
+
+	<p>
+		<button class="camposCent" (click)="enviaEmail()">ENVIAR</button>
+	</p>
+	<div id="demoenvius" style="display:none"></div>
+</ion-content>
+
+<ion-footer align-title="right" class="bar-assertive">
+	<div>
+		<h3 class="nomeMunicipius">{{municipio}}</h3><span class="title"><img src="img/issLogoMini.png"/></span>
+	</div>
+</ion-footer>

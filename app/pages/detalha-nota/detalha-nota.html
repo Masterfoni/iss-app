@@ -1,0 +1,36 @@
+<ion-header>
+
+  <ion-navbar>
+    <ion-title>Detalha Nota</ion-title>
+  </ion-navbar>
+
+</ion-header>
+	
+<ion-content padding>
+	<ion-list>
+		<ion-item *ngFor="let nota of asNotas">
+			<h2><b>Nome:</b> {{nota.tomador_nome}}</h2>
+			<h3><b>Num. da Nota:</b> {{nota.numero}}</h3>
+			<h3><b>Data de Emissão:</b> {{nota.datahoraemissao}}</h3>
+			<h3><b>Discriminação:</b> {{nota.discriminacao}}</h3>
+			<h3><b>CPF/CNPJ:</b> {{nota.tomador_cnpjcpf}}</h3>
+			<h3><b>Valor Total:</b> R$ {{nota.valortotal}}</h3>
+		</ion-item>
+	</ion-list>
+
+	<p>
+		<button class="camposCent" (click)="visualizarNota()">VISUALIZAR NOTA</button>
+	</p>
+
+	<p>
+		<button class="camposCent" (click)="enviarSegundaVia()">ENVIAR 2ª VIA</button>
+	</p>
+
+	<div id="demoDetalhaNota" style="display:none"></div>
+</ion-content>
+
+<ion-footer align-title="right" class="bar-assertive">
+	<div>
+		<h3 class="nomeMunicipius">{{municipio}}</h3><span class="title"><img src="img/issLogoMini.png"/></span>
+	</div>
+</ion-footer>

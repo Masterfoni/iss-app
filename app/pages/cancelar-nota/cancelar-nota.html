@@ -1,0 +1,29 @@
+<ion-header>
+
+  <ion-navbar>
+    <ion-title>Cancelar Nota</ion-title>
+  </ion-navbar>
+
+</ion-header>
+	
+<ion-content padding>
+	<form>
+		<label for="numNotaCancelamento">Num. Nota:</label><br>
+		<input id="numNotaCancelamento" type="number"/><br>
+
+		<label for="razaoCancelamento">Razão do Cancelamento:</label><br>
+		<textarea id="razaoCancelamento"></textarea><br>
+	</form>
+
+	<p>
+		<button class="camposCent" (click)="cancelaNota()">CANCELAR</button>
+	</p>
+
+	<div id="demoCancelaNota"  style="display:none"></div>
+</ion-content>
+
+<ion-footer align-title="right" class="bar-assertive">
+	<div>
+		<h3 class="nomeMunicipius">{{municipio}}</h3><span class="title"><img src="img/issLogoMini.png"/></span>
+	</div>
+</ion-footer>

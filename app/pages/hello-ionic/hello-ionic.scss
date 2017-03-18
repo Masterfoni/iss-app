@@ -1,0 +1,99 @@
+.popup-title
+{
+	title: '';
+}
+
+ion-navbar
+{
+	text-align:center;
+	div.toolbar-background
+	{
+		background-color: #007CA6;
+	}
+	
+	ion-title
+	{
+		div.toolbar-title
+		{
+			max-width:100% !important;
+			font-weight: 100;
+			color:white;
+			font-size: medium;
+		}
+	}
+}
+
+ion-content.getting-started
+{
+	
+	background-color: #007CA6;	
+	
+}
+
+/* CONFIGURACOES DE IMAGENS */
+img 
+{
+    max-width: 100%;
+	height: 220px;
+}
+
+.getting-started
+{
+	.selectCustom
+	{
+		margin-left:auto;
+		margin-right:auto;
+		display:block;
+		max-width:100%;
+		width:90%;
+		background-color:white;
+		align:center;
+		height: 40px;
+		text-align: center;
+	}
+	
+	input.camposCent
+	{
+		height: 40px;
+		text-align:center;
+		margin-left:auto;
+		margin-right:auto;
+		display:block;
+		max-width:100%;
+		min-width:0%;
+		width:90%;
+	}
+}
+
+.camposCent
+{
+	text-align:center;
+	margin-left:auto;
+	margin-right:auto;
+	display:block;
+}
+
+.getting-started 
+{
+	
+  p
+  {
+    margin: 20px 0;
+    line-height: 22px;
+    font-size: 16px;
+	
+	button
+	{
+		height:55px;
+		width:90%;
+		min-width:0%;
+		max-width:100%;
+	}
+
+  }
+}
+
+/* Estilo centralizador do placeholder*/
+::-webkit-input-placeholder {
+   text-align: center;
+}

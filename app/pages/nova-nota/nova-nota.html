@@ -1,0 +1,137 @@
+<ion-header>
+
+	<ion-navbar>
+		<ion-title>Nova Nota</ion-title>
+	</ion-navbar>
+
+</ion-header>
+
+
+<ion-content padding>
+	<fieldset>
+		<legend>Tomador Dados</legend>
+		<form id="dadosTomador">
+			<label for="cpfCnpj">CPF/CNPJ:</label><br>
+			<input id="cpfCnpj" type="text" (blur)="foqueiOut()" (focus)="foqueiIn()" /><br>
+
+			<label for="cliente">Razâo Social/Nome:</label><br>
+			<input id="cliente" type="text"/><br>
+
+			<label for="cep" >CEP:</label><br>
+			<input id="cep" type="text" (keydown)="mascaraCEP()" (blur)="consultaComCEP()"/><br>
+
+			<label for="endereco">Endereço:</label><br>
+			<input id="endereco" type="text"/><br>
+
+			<label for="numero">Número:</label><br>
+			<input id="numero" type="text"/><br>
+
+			<label for="complemento">Complemento:</label><br>
+			<input id="complemento" type="text"/><br>
+
+			<label for="bairro">Bairro:</label><br>
+			<input id="bairro" type="text"/><br>
+
+			<label for="uf">UF:</label><br>
+			<input id="uf" type="text"/><br>
+
+			<label for="municipio">Municipio:</label><br>
+			<input id="municipio" type="text"/><br>
+
+			<label for="email">E-mail:</label><br>
+			<input id="email" type="email"/><br>
+		</form>
+	</fieldset>
+
+	<fieldset>
+		<legend>Serviço</legend>	
+		<form id="dadosServico">
+			<label for="selectServico">Serviço:</label><br>
+			<ion-item class="selectCustom">
+				<ion-label>Serviço:</ion-label>
+				<ion-select id="selectServico" (ionChange)="persisteSelect($event)">
+					<ion-option *ngFor="let key of arrayServicos.dados[0].servicos" value="{{key.servico}}">{{key.descricao}}</ion-option>
+				</ion-select>
+			</ion-item><br>
+
+			<label for="codigoServico">Código do Seviço:</label><br>
+			<input id="codigoServico" type="text"/><br>
+
+			<label for="discriminacao">Discriminação:</label><br>
+			<textarea id="discriminacao"></textarea><br>
+
+			<label for="baseCalculo">Base Cálculo (Valor Total da Nota):</label><br>
+			<input id="baseCalculo" type="number"/><br>
+		</form>
+	</fieldset>
+
+	<fieldset>
+		<legend>Dados da Nota</legend>
+		<form>
+			<label for="obsNota">Observação da Nota:</label><br>
+			<input id="obsNota" type="text"/><br>
+
+			<label for="issRetido">ISS Retido:</label><br>
+			<input id="issRetido" type="number"/><br>
+
+			<label for="aliquotaInss">Aliquota INSS:</label><br>
+			<input id="aliquotaInss" type="number"/><br>
+
+			<ion-item class="checaBox">
+				<ion-label>Retem INSS</ion-label>
+    			<ion-checkbox ng-model="isChecked" (ionChange)="mudaCheckbox($event, 0)"></ion-checkbox>
+    		</ion-item>
+
+    		<label for="aliquotaIrrf">Aliquota IRRF:</label><br>
+			<input id="aliquotaIrrf" type="number"/><br>
+
+			<ion-item class="checaBox">
+				<ion-label>Retem IRRF</ion-label>
+    			<ion-checkbox ng-model="isChecked" (ionChange)="mudaCheckbox($event, 1)"></ion-checkbox>
+    		</ion-item>
+
+    		<label for="deducaoIrrf">Dedução IRRF:</label><br>
+			<input id="deducaoIrrf" type="number"/><br>		
+
+			<label for="aliquotaPis">Aliquota PIS:</label><br>
+			<input id="aliquotaPis" type="number"/><br>
+
+			<ion-item class="checaBox">
+				<ion-label>Retem PIS</ion-label>
+    			<ion-checkbox ng-model="isChecked" (ionChange)="mudaCheckbox($event, 2)"></ion-checkbox>
+    		</ion-item>
+
+			<label for="aliquotaCofins">Aliquota COFINS:</label><br>
+			<input id="aliquotaCofins" type="number"/><br>
+
+			<ion-item class="checaBox">
+				<ion-label>Retem COFINS</ion-label>
+    			<ion-checkbox ng-model="isChecked" (ionChange)="mudaCheckbox($event, 3)"></ion-checkbox>
+    		</ion-item>
+
+			<label for="aliquotaCsll">Aliquota CSLL:</label><br>
+			<input id="aliquotaCsll" type="number"/><br>
+
+			<ion-item class="checaBox">
+				<ion-label>Retem CSLL</ion-label>
+    			<ion-checkbox ng-model="isChecked" (ionChange)="mudaCheckbox($event, 4)"></ion-checkbox>
+    		</ion-item>
+
+			<label for="valDeduc">Valor Deduções:</label><br>
+			<input id="valDeduc" type="number"/><br>
+		</form>
+	</fieldset>
+
+	<p>
+		<button class="camposCent" (click)="criarNota()">GERAR</button>
+	</p>
+
+	<div id="demoCrianota" style="display:none"></div>
+	<div id="demobuscatomador" style="display:none"></div>
+</ion-content>
+
+<ion-footer align-title="right" class="bar-assertive">
+	<div>
+		<h3 class="nomeMunicipius">{{municipio}}</h3><span class="title"><img src="img/issLogoMini.png"/></span>
+	</div>
+</ion-footer>

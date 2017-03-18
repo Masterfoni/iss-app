@@ -1,0 +1,27 @@
+button
+{
+	background-color: light-blue;
+}
+
+ion-footer 
+{
+	div
+	{
+		background-color:#007CA6;
+		height:70px
+	}
+	span
+	{
+		float:right;
+		img
+		{
+			max-height: 100%;
+			height: 70px;
+		}
+	}
+}
+
+ion-list
+{
+	margin-bottom:0px;
+}

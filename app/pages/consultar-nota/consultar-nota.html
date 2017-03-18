@@ -1,0 +1,26 @@
+<ion-header>
+
+  <ion-navbar>
+    <ion-title>Consultar Nota</ion-title>
+  </ion-navbar>
+
+</ion-header>
+	
+<ion-content padding>
+	<form id="envioDeNota">
+		<label for="numNota">Num. Nota:</label><br>
+		<input id="numNota" type="number"/><br>
+	</form>
+
+	<p>
+		<button class="camposCent" (click)="buscaNotas()">CONSULTAR</button>
+	</p>
+
+	<div id="demoConsultaNotas" style="display:none"></div>
+</ion-content>
+
+<ion-footer align-title="right" class="bar-assertive">
+	<div>
+		<h3 class="nomeMunicipius">{{municipio}}</h3><span class="title"><img src="img/issLogoMini.png"/></span>
+	</div>
+</ion-footer>
