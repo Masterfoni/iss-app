@@ -76,7 +76,7 @@ export class LoginLembrado
                 }
             }
         }, (error) => {
-            console.log("ERROR: " + JSON.stringify(error));
+            alert("ERROR: " + JSON.stringify(error));
         });
     }
 
@@ -109,23 +109,18 @@ export class LoginLembrado
         
         if(jsonResposta.status == 1)
         {
-            // alert(jsonResposta.status_msg);
             this.showAlert('', jsonResposta.status_msg);
         }
         else if(jsonResposta.status == 0)
         {      
-            console.log(JSON.stringify(jsonResposta));
             this.goToHome(JSON.stringify(jsonResposta), login, senha, this.urlWebservice, this.loginPadrao, this.senhaPadrao, this.urlNota);
         }
     }
 
     goToHome(informacoesUsuario, login, senha, urlWebservice, loginPadrao, senhaPadrao, urlNota)
     {
-        // this.nav.push(HomePage, {param1: informacoesUsuario, param2: login, param3: senha});
         this.nav.push(HomePage, {param1: informacoesUsuario, param2: login, param3: senha, param4: urlWebservice, param5: loginPadrao, param6: senhaPadrao, param7: urlNota, param8: this.municipio}).then(() => {
-        // first we find the index of the current view controller:
         const index = this.viewCtrl.index;
-        // then we remove it from the navigation stack
         this.nav.remove(index);
         });
     }

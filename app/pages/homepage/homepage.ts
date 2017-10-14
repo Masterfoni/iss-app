@@ -51,8 +51,6 @@ export class HomePage
   		this.urlNota = this.navParams.get('param7');
   		this.municipio = this.navParams.get('param8');
 
-  		console.log(this.municipio);
-
   		this.globalServices.setLoginPadrao(this.loginPadrao);
   		this.globalServices.setSenhaPadrao(this.senhaPadrao);
   		this.globalServices.setUrlWebservice(this.urlWebservice);
@@ -122,24 +120,17 @@ export class HomePage
             {
                 for(var i = 0; i < data.rows.length; i++) 
                 {
-                	// alert(data.rows.item(i).lastname);
-                	// alert(data.rows.item(i).firstname);
-                	// alert(data.rows.item(i).login);
                     this.people.push({firstname: data.rows.item(i).firstname, lastname: data.rows.item(i).lastname, login: data.rows.item(i).login});
                 }
             }
         }, (error) => {
-            console.log("ERROR: " + JSON.stringify(error));
+            alert("ERROR: " + JSON.stringify(error));
         });
     }
 
     public add() 
     {
-    	// alert(JSON.stringify(JSON.parse(this.infoUsuario).dados[0].razaosocial));
-    	// alert(this.municipio);
-    	// alert(this.login);
         this.database.executeSql("INSERT OR REPLACE INTO people3 (id,firstname, lastname, login) VALUES (1, '"+JSON.stringify(JSON.parse(this.infoUsuario).dados[0].razaosocial)+"', '"+this.municipio+"', '"+this.login+"')", []).then((data) => {
-        	//alert("Inserido: " + JSON.stringify(data));
         }, (error) => {
             alert("Erro: " + JSON.stringify(error.err));
         });
@@ -169,7 +160,6 @@ export class HomePage
 
 	onPageDidEnter()
 	{
-		console.log(this.infoUsuario);
 		this.carregaVeilor();
 	}
 
@@ -212,10 +202,6 @@ export class HomePage
 				stringFim = ""+dataFim.getFullYear()+"-"+(Number(data.getMonth())+1)+"-"+dataFim.getDate();
 		}
 
-
-		console.log(stringInicio);
-		console.log(stringFim);
-
 		this.issServices.requisicaoPOSTListaNotasHome(stringInicio,stringFim,"",this.login,this.senha);
 
 		var resultJson = document.getElementById("demoHomepage").textContent || document.getElementById("demoHomepage").innerText || "";
@@ -225,13 +211,6 @@ export class HomePage
 		var ojson = JSON.parse(resultJson);
 
 		this.veilor = JSON.parse(this.infoUsuario).dados[0].valornotas;
-		// this.veilor = 0;
-
-		// for(var i = 0; i < ojson.dados.length; i++)
-		// {
-		// 	if(ojson.dados[i].estado != "C")
-		// 		this.veilor = Number(this.veilor) + Number(ojson.dados[i].valortotal);
-		// }
 
 		if(this.veilor != 0)
 		{
@@ -252,14 +231,6 @@ export class HomePage
 		}
 
 		this.issVeilor = JSON.parse(this.infoUsuario).dados[0].valoriss;
-
-		// this.issVeilor = 0;
-
-		// for(var i = 0; i < ojson.dados.length; i++)
-		// {
-		// 	if(ojson.dados[i].estado != "C")
-		// 		this.issVeilor = Number(this.issVeilor) + Number(ojson.dados[i].issretido);
-		// }
 
 		if(this.issVeilor != 0)
 		{

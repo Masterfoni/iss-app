@@ -16,7 +16,6 @@ class MyApp
 {
   @ViewChild(Nav) nav: Nav;
 
-  // make HelloIonicPage the root (or first) page
   rootPage: any = HelloIonicPage;
   pages: Array<{title: string, component: any}>;
 
@@ -34,7 +33,6 @@ class MyApp
       this.db = new SQLite();
       this.db.openDatabase({name: "data.db", location: "default"}).then(() => {
         this.db.executeSql("CREATE TABLE IF NOT EXISTS people3 (id INTEGER PRIMARY KEY, firstname TEXT, lastname TEXT, login TEXT)", {}).then((data) => {
-            // alert("Tabela Criada: "+data);
         }, (error) => {alert("Impossivel executar sql " + error);})
             }, (error) => {alert("Impossivel abrir o banco " + error);});
 
@@ -51,12 +49,7 @@ class MyApp
         this.db.executeSql("SELECT * FROM people3", []).then((data) => {
             if(data.rows.length > 0) 
             {
-                //alert(data.rows.length);
                 this.nav.setRoot(LoginLembrado);
-            }
-            else
-            {
-              // alert("ZEROU");
             }
         }, (error) => {
             console.log("Erro: " + JSON.stringify(error));

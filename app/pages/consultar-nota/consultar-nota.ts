@@ -35,7 +35,6 @@ export class ConsultarNota
 		
 		if(numNotus == "" || numNotus == null)
 		{
-			//alert("Digite um número de nota!");
             this.showAlert('', "Digite um número de nota!");
 			return;
 		}

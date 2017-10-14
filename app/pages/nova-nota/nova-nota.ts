@@ -66,16 +66,10 @@ export class NovaNota
             arrayRPS[i] = Math.floor((Math.random() * 10));    
         }
 
-        console.log(arrayRPS);
-
         for(i = 0; i < 5; i++)
         {
             stringRPS = ""+stringRPS+""+arrayRPS[i];
         }
-
-        console.log(dataHoje.getFullYear());
-        console.log(dataHoje.getMonth()+1);
-        console.log(dataHoje.getDate());
 
 		notaString = "<?xml version='1.0' encoding='UTF-8'?>"+
                 "<importacao>"+
@@ -150,16 +144,12 @@ export class NovaNota
 
         var jsonResposta =  JSON.parse(resultJson);
 
-        console.log(jsonResposta);
-
         if(jsonResposta.status == 1)
         {
-            //alert(jsonResposta.status_msg);
             this.showAlert('', jsonResposta.status_msg);
         }
         else if(jsonResposta.status == 0)
         {
-            //alert("Nota Criada! N.: " +jsonResposta.dados[0].numero);
             this.showAlert('', "Nota Criada! N.: "+jsonResposta.dados[0].numero);
             this.navCtrl.pop();
         }
@@ -186,24 +176,19 @@ export class NovaNota
         (<HTMLInputElement>document.getElementById('cliente')).value = decodeURIComponent(this.utf8Decode(jsonResposta.dados[0].razaosocial));
         (<HTMLInputElement>document.getElementById('uf')).value = jsonResposta.dados[0].uf;
         (<HTMLInputElement>document.getElementById('email')).value = jsonResposta.dados[0].email;
-
-        console.log(jsonResposta);
-
-        
     }
 
     utf8Decode(utf8String) 
     {
         if (typeof utf8String != 'string') throw new TypeError('parameter ‘utf8String’ is not a string');
-        // note: decode 3-byte chars first as decoded 2-byte strings could appear to be 3-byte char!
         const unicodeString = utf8String.replace(
-            /[\u00e0-\u00ef][\u0080-\u00bf][\u0080-\u00bf]/g,  // 3-byte chars
-            function(c) {  // (note parentheses for precedence)
+            /[\u00e0-\u00ef][\u0080-\u00bf][\u0080-\u00bf]/g,
+            function(c) { 
                 var cc = ((c.charCodeAt(0)&0x0f)<<12) | ((c.charCodeAt(1)&0x3f)<<6) | ( c.charCodeAt(2)&0x3f);
                 return String.fromCharCode(cc); }
         ).replace(
-            /[\u00c0-\u00df][\u0080-\u00bf]/g,                 // 2-byte chars
-            function(c) {  // (note parentheses for precedence)
+            /[\u00c0-\u00df][\u0080-\u00bf]/g,           
+            function(c) { 
                 var cc = (c.charCodeAt(0)&0x1f)<<6 | c.charCodeAt(1)&0x3f;
                 return String.fromCharCode(cc); }
         );
@@ -262,62 +247,51 @@ export class NovaNota
 
     consultaComCEP()
     {
-        //Nova variável "cep" somente com dígitos.
         var cep = $("#cep").val().replace(/\D/g, '');
 
-        //Verifica se campo cep possui valor informado.
         if (cep != "")
         {
-            //Expressão regular para validar o CEP.
             var validacep = /^[0-9]{8}$/;
 
-            //Valida o formato do CEP.
             if(validacep.test(cep))
             {
-                //Preenche os campos com "..." enquanto consulta webservice.
                 $("#endereco").val("...");
                 $("#bairro").val("...");
                 $("#municipio").val("...");
                 $("#uf").val("...");
 
-                //Consulta o webservice viacep.com.br/
                 $.getJSON("http://viacep.com.br/ws/"+ cep +"/json/?callback=?", function(dados) 
                 {
                     if (!("erro" in dados)) 
                     {
-                        //Atualiza os campos com os valores da consulta.
                         $("#endereco").val(dados.logradouro);
                         $("#bairro").val(dados.bairro);
                         $("#municipio").val(dados.localidade);
                         $("#uf").val(dados.uf);
-                    } //end if.
+                    }
                     else 
                     {
-                        //CEP pesquisado não foi encontrado.
                         $("#endereco").val("");
                         $("#bairro").val("");
                         $("#municipio").val("");
                         $("#uf").val("");
-                        //alert("CEP não encontrado.");
-                        this.showAlert('', 'CEP não encontrado.');
 
+                        this.showAlert('', 'CEP não encontrado.');
                     }
                 });
-            } //end if.
+            } 
             else 
             {
-                //cep é inválido.
                 $("#endereco").val("");
                 $("#bairro").val("");
                 $("#municipio").val("");
                 $("#uf").val("");
-                //alert("Formato de CEP inválido.");
+
                 this.showAlert('', 'Formato de CEP inválido.');
             }
-        } //end if.
+        }
         else
         {
-            //cep sem valor, limpa formulário.
             $("#endereco").val("");
             $("#bairro").val("");
             $("#municipio").val("");

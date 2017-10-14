@@ -43,8 +43,7 @@ export class IssServices
             }
         };
 
-        xhttp.open("POST",""+this.globalServices.getUrlWebservice()+"/ws_buscatomador.php", false);
-        //xhttp.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
+        xhttp.open("POST", this.globalServices.getUrlWebservice(), false);
         xhttp.send(data);
     }
 
@@ -75,15 +74,12 @@ export class IssServices
             }
         };
 
-        xhttp.open("POST", ""+this.globalServices.getUrlWebservice()+"/ws_buscanotas.php", false);
-        //xhttp.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
+        xhttp.open("POST", this.globalServices.getUrlWebservice(), false);
         xhttp.send(data);
     }
     
     requisicaoPOSTCancelaNota(numNota, motivoNota, login, senha)
     {
-        // var login = "67.261.788/0001-60"; 
-        // var senha = "123456";        
         var xhttp = new XMLHttpRequest();
 
         var data = new FormData();
@@ -108,7 +104,7 @@ export class IssServices
             }
         };
 
-        xhttp.open("POST", ""+this.globalServices.getUrlWebservice()+"/ws_cancelanota.php", false);
+        xhttp.open("POST", this.globalServices.getUrlWebservice(), false);
         xhttp.send(data);
     }
 
@@ -141,8 +137,7 @@ export class IssServices
             }
         };
 
-        xhttp.open("POST", ""+this.globalServices.getUrlWebservice()+"/ws_gerarnota.php", false);
-        //xhttp.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
+        xhttp.open("POST", this.globalServices.getUrlWebservice(), false);
         xhttp.send(data);
     }
 
@@ -174,8 +169,7 @@ export class IssServices
             }
         };
 
-        xhttp.open("POST", ""+this.globalServices.getUrlWebservice()+"/ws_buscanotas.php", false);
-        //xhttp.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
+        xhttp.open("POST", this.globalServices.getUrlWebservice(), false);
         xhttp.send(data);
     }
 
@@ -207,8 +201,7 @@ export class IssServices
             }
         };
 
-        xhttp.open("POST", ""+this.globalServices.getUrlWebservice()+"/ws_buscanotas.php", false);
-        //xhttp.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
+        xhttp.open("POST", this.globalServices.getUrlWebservice(), false);
         xhttp.send(data);
     }
 
@@ -239,16 +232,12 @@ export class IssServices
             }
         };
 
-        xhttp.open("POST", ""+this.globalServices.getUrlWebservice()+"/ws_buscanotas.php", false);
-        //xhttp.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
+        xhttp.open("POST", this.globalServices.getUrlWebservice(), false);
         xhttp.send(data);
     }
 
     requisicaoPOSTLogin(urlWebservice, login, senha, loginPadrao, senhaPadrao)
     {
-        //45.922.746/0001-90
-        // login = "67.261.788/0001-60";
-        // senha = "123456";        
         var xhttp = new XMLHttpRequest();
 
         var data = new FormData();
@@ -270,24 +259,19 @@ export class IssServices
             }
         };
 
-        xhttp.open("POST", ""+urlWebservice+"/ws_dadoslogin.php", false);
-        // xhttp.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
+        xhttp.open("POST", urlWebservice, false);
         xhttp.send(data);
     }
 
 
-    //============================================================================================================================
-    //============================================================================================================================
-    //============================================================================================================================
-    //============================================================================================================================
     conectarPrefeituras()
     {
         var xhttp = new XMLHttpRequest();
 
         var data = new FormData();
 
-        data.append('login', 'agillApp01');
-        data.append('senha', 'p@SsApp00#');
+        data.append('login', 'REMOVIDO-PRIVADO');
+        data.append('senha', 'REMOVIDO-PRIVADO');
 
 
         xhttp.onreadystatechange = function()
@@ -302,8 +286,7 @@ export class IssServices
             }
         };
 
-        xhttp.open("POST", "http://www.agill.com.br/app_servicos/ws_prefeituras.php", false);
-        //xhttp.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
+        xhttp.open("POST", "REMOVIDO-PRIVADO", false);
         xhttp.send(data);
     }
 

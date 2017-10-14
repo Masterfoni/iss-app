@@ -39,16 +39,9 @@ export class EnviarNota
 		
 		if(numNotus == null || numNotus == "")
 		{
-			//alert("Preencha o número da sua nota!");
 			this.showAlert('', 'Preencha o número da sua nota!');
 			return;
 		}
-		// if(emailEnvius == null || emailEnvius == "")
-		// {
-		// 	//alert("Preencha o e-mail do destinatário!");
-		// 	this.showAlert('', 'Preencha o e-mail do destinatário!');
-		// 	return;
-		// }
 
 		this.issServices.requisicaoPOSTEnviaConsultaNota("", "", numNotus, this.login, this.senha);
 
@@ -89,7 +82,6 @@ export class EnviarNota
         };
 
         xhttp.open("POST",""+this.globalServices.getUrlWebservice()+"/ws_email.php", false);
-        //xhttp.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
         xhttp.send(data);
 
         var resultJson = document.getElementById("demoenvius").textContent || document.getElementById("demoenvius").innerText || "";

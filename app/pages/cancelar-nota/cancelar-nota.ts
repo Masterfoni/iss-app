@@ -41,19 +41,16 @@ export class CancelarNota
 
         if(jsonResposta.status == 1)
         {
-            // alert(jsonResposta.status_msg);
             this.showAlert('', jsonResposta.status_msg);
         }
         else if(jsonResposta.status == 0)
         {
         	if(jsonResposta.dados[0].tipo == "C")
         	{
-        		//alert("Cancelamento Realizado!");
                 this.showAlert('', "Cancelamento Realizado!");
         	}
         	else if(jsonResposta.dados[0].tipo == "S")
         	{
-        		//alert("Solicitação de Cancelamento Realizada.");
                 this.showAlert('', "Solicitação de Cancelamento Realizada!")
         	}
         }
